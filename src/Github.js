@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Route} from 'react-router-dom'
 
 import './Github.css'
 
@@ -35,6 +36,8 @@ render(){
                     </button>
                </div>
             </form>
+            <Route path="/github/:username" render={(props) => <h3>You searched for{props.match.params.username}</h3>}/>
+            <Route exact path="/github" render={() => <h3>Please enter a github username</h3>}/>
         </div>
     )
    }
