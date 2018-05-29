@@ -4,6 +4,15 @@ import './Github.css'
 
 class Github extends Component
 {
+
+state = {
+    username: '',
+}
+
+handleChange = (ev) => {
+    this.setState({username: ev.target.value})
+}
+
 render(){
     return(
         <div className="Github">
@@ -13,7 +22,7 @@ render(){
             />
             <form>
                 <div>
-                    <input type="text"/>
+                    <input type="text" value={this.state.username} onChange={this.handleChange}/>
                 </div>
                 <div>
                     <button type="submit">Look up Github User
